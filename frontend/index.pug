@@ -1,0 +1,35 @@
+doctype html
+html(lang='en', ng-app="app")
+	head
+		title Angular 1 Boiler
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+		meta(name='description', content='description')
+		meta(name='keywords', content='keywords')
+		meta(name='author', content='author')
+		meta(name="robots", content="index, follow")
+
+		//- ----- CSS Files -----
+		link(rel='stylesheet', href='css/master.css')
+
+	body(ng-controller="ctrl")
+		h1 Pug/html Connected
+		h1 {{test}}
+		h1.testClass CSS Connected
+
+
+
+
+
+
+
+	// Jquery files
+	script(src="http://code.jquery.com/jquery-3.1.1.slim.min.js", integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=", crossorigin="anonymous")
+	// end Jquery files
+
+	// angular files
+	script(type="text/javascript", src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js")
+	script(src="angular/app.js", charset="utf-8")
+	script(src="angular/ctrl.js", charset="utf-8")
+	script(type="text/javascript" src="angular/srvc.js")
+	// end angular files
