@@ -1,4 +1,25 @@
-angular.module("app").controller("ctrl",function($scope, srvc){
+angular.module("app").controller("ctrl",function($scope, $timeout, srvc){
 	$scope.test = srvc.test;
-	console.log("working");
+	$scope.min = 25;
+	$scope.sec = "00";
+	var timer = function(){
+		if($scope.min === 0 && $scope.sec === 1){
+			$scope.min = "00";
+			$scope.sec = "00" ;
+		}
+		else if($scope.sec === 1 && $scope.min !== 0){
+			$scope.min--;
+			$scope.sec = 60;
+			$timeout(timer,1000);
+		}
+		else{
+			$scope.sec--;
+			$timeout(timer,1000);
+		}
+	}
+	$(".startBtn").click(function(){
+		$timeout(timer,500);
+		$scope.sec = 60;
+		$scope.min = 24;
+	});
 });
